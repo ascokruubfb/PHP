@@ -1,6 +1,8 @@
 <?php
-$w = fopen("a.txt","a");
-fwrite($w,"a");
-echo "本站访问次数为: " . filesize("a.txt");
-fclose($w);
+$file=fopen("website.num","r");
+$a=fread($file,filesize("website.num"));
+echo $a;
+$a++;
+fclose($file);
+file_put_contents("website.num",strval($a));
 ?>
